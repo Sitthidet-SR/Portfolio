@@ -6,8 +6,8 @@ export const personalInfo = {
     role: "IT Support / Junior Developer",
     tagline: "Creating seamless digital experiences",
     bio: "IT Support & Junior Developer with hands-on experience in system maintenance, network administration, and web development.",
-    location: "Tha Maka, Ratchaburi, Thailand",
-    locationTh: "อ.ท่ามะกา จ.ราชบุรี",
+    location: "Suan Phueng, Ratchaburi, Thailand",
+    locationTh: "อ.สวนผึ้ง จ.ราชบุรี",
     email: "sitthidet.sr@example.com", // แก้ไขอีเมลจริงของคุณ
     resumeUrl: "/resume.pdf",
 };
