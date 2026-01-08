@@ -1,6 +1,10 @@
+"use client";
+
 import { personalInfo, socialLinks } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Footer() {
+    const { t } = useLanguage();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -16,7 +20,7 @@ export default function Footer() {
                             {personalInfo.name.split(" ")[0]}
                         </a>
                         <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                            © {currentYear} {personalInfo.name}. All rights reserved.
+                            © {currentYear} {personalInfo.name}. {t("footer.rights")}
                         </p>
                     </div>
 
@@ -26,19 +30,19 @@ export default function Footer() {
                             href="#about"
                             className="text-zinc-500 dark:text-zinc-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                         >
-                            About
+                            {t("nav.about")}
                         </a>
                         <a
                             href="#projects"
                             className="text-zinc-500 dark:text-zinc-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                         >
-                            Projects
+                            {t("nav.projects")}
                         </a>
                         <a
                             href="#contact"
                             className="text-zinc-500 dark:text-zinc-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                         >
-                            Contact
+                            {t("nav.contact")}
                         </a>
                     </div>
 
@@ -83,8 +87,8 @@ export default function Footer() {
                 {/* Built With */}
                 <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800 text-center">
                     <p className="text-sm text-zinc-400">
-                        Built with{" "}
-                        <span className="text-red-500">❤️</span> using{" "}
+                        {t("footer.builtWith")}{" "}
+                        <span className="text-red-500">❤️</span> {t("footer.using")}{" "}
                         <a
                             href="https://nextjs.org"
                             target="_blank"

@@ -1,6 +1,7 @@
 "use client";
 
 import { skills } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface SkillCardProps {
     name: string;
@@ -47,34 +48,41 @@ function SkillCategory({ title, icon, items }: SkillCategoryProps) {
 }
 
 export default function Skills() {
+    const { t } = useLanguage();
+
     return (
         <section id="skills" className="py-20">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-                        Skills & Technologies
+                        {t("skills.title")}
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
                     <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                        Here are the technologies and tools I work with to bring ideas to life.
+                        {t("skills.subtitle")}
                     </p>
                 </div>
 
-                {/* Skills Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Skills Grid - 4 columns for IT Support */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <SkillCategory
-                        title="Languages"
+                        title={t("skills.itSupport")}
+                        icon="🖥️"
+                        items={skills.itSupport}
+                    />
+                    <SkillCategory
+                        title={t("skills.languages")}
                         icon="💻"
                         items={skills.languages}
                     />
                     <SkillCategory
-                        title="Frameworks"
+                        title={t("skills.frameworks")}
                         icon="⚛️"
                         items={skills.frameworks}
                     />
                     <SkillCategory
-                        title="Tools"
+                        title={t("skills.tools")}
                         icon="🛠️"
                         items={skills.tools}
                     />
@@ -82,9 +90,9 @@ export default function Skills() {
 
                 {/* Additional Tech Stack Icons */}
                 <div className="mt-16 text-center">
-                    <p className="text-zinc-500 dark:text-zinc-400 mb-6">Also familiar with</p>
+                    <p className="text-zinc-500 dark:text-zinc-400 mb-6">{t("skills.alsoFamiliar")}</p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        {["🔥 Firebase", "☁️ AWS", "🐳 Docker", "📱 React Native", "🎨 Figma", "📊 GraphQL"].map(
+                        {["🔧 Hardware Repair", "📡 WiFi/Network", "🎥 CCTV Systems", "🔊 Audio/AV", "📱 Mobile Support", "☁️ Cloud Basics"].map(
                             (tech) => (
                                 <span
                                     key={tech}

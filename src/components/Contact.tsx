@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { personalInfo, socialLinks } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Contact() {
+    const { t } = useLanguage();
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -33,12 +35,11 @@ export default function Contact() {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-                        Get In Touch
+                        {t("contact.title")}
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
                     <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                        Have a project in mind or just want to say hi? Feel free to reach out!
-                        I&apos;m always open to discussing new opportunities.
+                        {t("contact.subtitle")}
                     </p>
                 </div>
 
@@ -47,11 +48,10 @@ export default function Contact() {
                     <div className="space-y-8">
                         <div>
                             <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
-                                Let&apos;s work together
+                                {t("contact.workTogether")}
                             </h3>
                             <p className="text-zinc-600 dark:text-zinc-400 mb-8">
-                                I&apos;m currently available for freelance work and full-time positions.
-                                If you have a project that needs some creative touch, I&apos;d love to hear about it.
+                                {t("contact.available")}
                             </p>
                         </div>
 
@@ -67,7 +67,7 @@ export default function Contact() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-zinc-500 dark:text-zinc-400">Email</p>
+                                    <p className="text-sm text-zinc-500 dark:text-zinc-400">{t("contact.email")}</p>
                                     <p className="text-zinc-900 dark:text-white font-medium">{personalInfo.email}</p>
                                 </div>
                             </a>
@@ -80,7 +80,7 @@ export default function Contact() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-zinc-500 dark:text-zinc-400">Location</p>
+                                    <p className="text-sm text-zinc-500 dark:text-zinc-400">{t("contact.location")}</p>
                                     <p className="text-zinc-900 dark:text-white font-medium">{personalInfo.location}</p>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@ export default function Contact() {
 
                         {/* Social Links */}
                         <div>
-                            <p className="text-zinc-500 dark:text-zinc-400 mb-4">Find me on</p>
+                            <p className="text-zinc-500 dark:text-zinc-400 mb-4">{t("contact.findMe")}</p>
                             <div className="flex gap-4">
                                 <a
                                     href={socialLinks.github}
@@ -132,7 +132,7 @@ export default function Contact() {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                                    Your Name
+                                    {t("contact.yourName")}
                                 </label>
                                 <input
                                     type="text"
@@ -147,7 +147,7 @@ export default function Contact() {
 
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                                    Your Email
+                                    {t("contact.yourEmail")}
                                 </label>
                                 <input
                                     type="email"
@@ -162,7 +162,7 @@ export default function Contact() {
 
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">
-                                    Message
+                                    {t("contact.message")}
                                 </label>
                                 <textarea
                                     id="message"
@@ -186,18 +186,18 @@ export default function Contact() {
                                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                         </svg>
-                                        Sending...
+                                        {t("contact.sending")}
                                     </>
                                 ) : isSubmitted ? (
                                     <>
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        Message Sent!
+                                        {t("contact.sent")}
                                     </>
                                 ) : (
                                     <>
-                                        Send Message
+                                        {t("contact.sendMessage")}
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                         </svg>

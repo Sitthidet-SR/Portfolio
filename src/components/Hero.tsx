@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { personalInfo, socialLinks } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Hero() {
+    const { t } = useLanguage();
     const [typedText, setTypedText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
-    const roles = ["Full Stack Developer", "UI/UX Enthusiast", "Problem Solver"];
+
+    const roles = [t("hero.role1"), t("hero.role2"), t("hero.role3")];
 
     useEffect(() => {
         const currentRole = roles[loopNum % roles.length];
@@ -47,7 +50,7 @@ export default function Hero() {
                     {/* Left Content */}
                     <div className="flex-1 text-center lg:text-left animate-slide-up">
                         <p className="text-indigo-500 dark:text-indigo-400 font-medium mb-4">
-                            👋 Hello, I&apos;m
+                            {t("hero.greeting")}
                         </p>
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-white mb-4">
                             {personalInfo.name}
@@ -59,8 +62,7 @@ export default function Hero() {
                             </span>
                         </div>
                         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mb-8">
-                            {personalInfo.tagline}. I build modern, performant web applications
-                            with attention to detail and user experience.
+                            {t("hero.tagline")}. {t("hero.description")}
                         </p>
 
                         {/* CTA Buttons */}
@@ -73,7 +75,7 @@ export default function Hero() {
                                 }}
                                 className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-medium rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
                             >
-                                View My Work
+                                {t("hero.viewWork")}
                             </a>
                             <a
                                 href="#contact"
@@ -83,7 +85,7 @@ export default function Hero() {
                                 }}
                                 className="px-8 py-3 border-2 border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:border-indigo-500 hover:text-indigo-500 dark:hover:border-indigo-400 dark:hover:text-indigo-400 font-medium rounded-full transition-all duration-300"
                             >
-                                Contact Me
+                                {t("hero.contactMe")}
                             </a>
                         </div>
 

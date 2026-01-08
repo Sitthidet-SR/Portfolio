@@ -1,15 +1,25 @@
 "use client";
 
-import { aboutMe, personalInfo } from "@/lib/data";
+import { personalInfo } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function About() {
+    const { t } = useLanguage();
+
+    const highlights = [
+        t("about.highlight1"),
+        t("about.highlight2"),
+        t("about.highlight3"),
+        t("about.highlight4"),
+    ];
+
     return (
         <section id="about" className="py-20 bg-zinc-50 dark:bg-zinc-900/50">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-                        About Me
+                        {t("about.title")}
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-cyan-500 mx-auto rounded-full"></div>
                 </div>
@@ -39,19 +49,17 @@ export default function About() {
                     {/* Right - Content */}
                     <div className="space-y-6">
                         <div className="prose dark:prose-invert max-w-none">
-                            {aboutMe.description.split("\n\n").map((paragraph, index) => (
-                                <p
-                                    key={index}
-                                    className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed"
-                                >
-                                    {paragraph.trim()}
-                                </p>
-                            ))}
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                {t("about.description1")}
+                            </p>
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                {t("about.description2")}
+                            </p>
                         </div>
 
                         {/* Highlights */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                            {aboutMe.highlights.map((highlight, index) => (
+                            {highlights.map((highlight, index) => (
                                 <div
                                     key={index}
                                     className="flex items-center gap-3 p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
@@ -68,7 +76,7 @@ export default function About() {
                                     3+
                                 </div>
                                 <div className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                                    Years Experience
+                                    {t("about.yearsExp")}
                                 </div>
                             </div>
                             <div className="text-center">
@@ -76,7 +84,7 @@ export default function About() {
                                     20+
                                 </div>
                                 <div className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                                    Projects Completed
+                                    {t("about.projectsCompleted")}
                                 </div>
                             </div>
                             <div className="text-center">
@@ -84,7 +92,7 @@ export default function About() {
                                     10+
                                 </div>
                                 <div className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                                    Happy Clients
+                                    {t("about.happyClients")}
                                 </div>
                             </div>
                         </div>
