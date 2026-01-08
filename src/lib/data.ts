@@ -8,7 +8,7 @@ export const personalInfo = {
     bio: "IT Support & Junior Developer with hands-on experience in system maintenance, network administration, and web development.",
     location: "Suan Phueng, Ratchaburi, Thailand",
     locationTh: "อ.สวนผึ้ง จ.ราชบุรี",
-    email: "sitthidet.sr@example.com", // แก้ไขอีเมลจริงของคุณ
+    email: "sitthidet.sr@gmail.com",
     resumeUrl: "/resume.pdf",
 };
 
@@ -53,8 +53,8 @@ export const experience = [
         companyTh: "บ้านคุ้งน้ำ รีสอร์ท",
         locationEn: "Tha Maka, Ratchaburi",
         locationTh: "อ.ท่ามะกา จ.ราชบุรี",
-        period: "Jun 2023 - Present",
-        periodTh: "มิ.ย. 2566 - ปัจจุบัน",
+        period: "Jun 2023 - Aug 2025",
+        periodTh: "มิ.ย. 2566 - ส.ค. 2568",
         responsibilitiesEn: [
             "Manage and troubleshoot internet systems within the resort",
             "Maintain all computer systems in the organization",
