@@ -8,7 +8,7 @@ export const personalInfo = {
     bio: "IT Support & Junior Developer with hands-on experience in system maintenance, network administration, and web development.",
     location: "Suan Phueng, Ratchaburi, Thailand",
     locationTh: "อ.สวนผึ้ง จ.ราชบุรี",
-    email: "sitthidet.sr@gmail.com",
+    email: "Sitthidet.SR@gmail.com",
     resumeUrl: "/resume.pdf",
 };
 
