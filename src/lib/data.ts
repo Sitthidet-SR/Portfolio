@@ -16,8 +16,8 @@ export const personalInfo = {
 
 export const socialLinks = {
     github: "https://github.com/Sitthidet-SR",
-    linkedin: "https://linkedin.com/in/sitthidet",
-    twitter: "https://twitter.com/sitthidet",
+    facebook: "https://www.facebook.com/SitthidetSR/",
+    instagram: "https://www.instagram.com/sitthidet_jack/",
 };
 
 export const aboutMe = {
